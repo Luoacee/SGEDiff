@@ -1,0 +1,20 @@
+IOD
+  -OEChem-11292419103D
+
+  1  0  0     0  0  0  0  0  0999 V2000
+   44.8270   79.6500   79.1360 I   0  5  0  0  0  0  0  0  0  0  0  0
+M  CHG  1   1  -1
+M  END
+> <OPENEYE_ISO_SMILES>
+[I-]
+
+> <OPENEYE_INCHI>
+InChI=1S/HI/h1H/p-1
+
+> <OPENEYE_INCHIKEY>
+XMBWDFGMSWQBCA-UHFFFAOYSA-M
+
+> <FORMULA>
+I-
+
+$$$$

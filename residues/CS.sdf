@@ -1,0 +1,20 @@
+CS
+  -OEChem-10042415253D
+
+  1  0  0     0  0  0  0  0  0999 V2000
+    0.0000    0.0000    0.0000 Cs  0  3  0  0  0  0  0  0  0  0  0  0
+M  CHG  1   1   1
+M  END
+> <OPENEYE_ISO_SMILES>
+[Cs+]
+
+> <OPENEYE_INCHI>
+InChI=1S/Cs/q+1
+
+> <OPENEYE_INCHIKEY>
+NCMHKCKGHRPLCM-UHFFFAOYSA-N
+
+> <FORMULA>
+Cs+
+
+$$$$

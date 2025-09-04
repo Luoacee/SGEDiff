@@ -1,0 +1,13 @@
+sample:
+  seed: 2024
+  num_samples: 100
+  num_steps: 1000
+  pos_only: False
+  center_pos_mode: protein
+  sample_num_atoms: prior
+
+model:
+  target_diff: trained_model/KGDiff/985000.pt
+  kg_diff: trained_model/KGDiff/985000.pt
+  SGEDiff: trained_model/SGEDiff/1000000.pt
+  SGEDiff-NG: trained_model/SGEDiff/1000000.pt

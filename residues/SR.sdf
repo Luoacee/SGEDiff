@@ -1,0 +1,20 @@
+SR
+  -OEChem-10042415173D
+
+  1  0  0     0  0  0  0  0  0999 V2000
+    0.0000    0.0000    0.0000 Sr  0  2  0  0  0  0  0  0  0  0  0  0
+M  CHG  1   1   2
+M  END
+> <OPENEYE_ISO_SMILES>
+[Sr+2]
+
+> <OPENEYE_INCHI>
+InChI=1S/Sr/q+2
+
+> <OPENEYE_INCHIKEY>
+PWYYWQHXAPXYMF-UHFFFAOYSA-N
+
+> <FORMULA>
+Sr+2
+
+$$$$

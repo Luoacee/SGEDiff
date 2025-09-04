@@ -1,0 +1,20 @@
+MG
+  -OEChem-10042415173D
+
+  1  0  0     0  0  0  0  0  0999 V2000
+    0.0000    0.0000    0.0000 Mg  0  2  0  0  0  0  0  0  0  0  0  0
+M  CHG  1   1   2
+M  END
+> <OPENEYE_ISO_SMILES>
+[Mg+2]
+
+> <OPENEYE_INCHI>
+InChI=1S/Mg/q+2
+
+> <OPENEYE_INCHIKEY>
+JLVVSXFLKOJNIY-UHFFFAOYSA-N
+
+> <FORMULA>
+Mg+2
+
+$$$$

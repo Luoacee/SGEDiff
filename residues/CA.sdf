@@ -1,0 +1,20 @@
+CA
+  -OEChem-11292419103D
+
+  1  0  0     0  0  0  0  0  0999 V2000
+    0.0000    0.0000    0.0000 Ca  0  2  0  0  0  0  0  0  0  0  0  0
+M  CHG  1   1   2
+M  END
+> <OPENEYE_ISO_SMILES>
+[Ca+2]
+
+> <OPENEYE_INCHI>
+InChI=1S/Ca/q+2
+
+> <OPENEYE_INCHIKEY>
+BHPQYMZQTOCNFJ-UHFFFAOYSA-N
+
+> <FORMULA>
+Ca+2
+
+$$$$

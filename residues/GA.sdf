@@ -1,0 +1,20 @@
+GA
+  -OEChem-10042415163D
+
+  1  0  0     0  0  0  0  0  0999 V2000
+    0.0000    0.0000    0.0000 Ga  0  1  0  0  0  0  0  0  0  0  0  0
+M  CHG  1   1   3
+M  END
+> <OPENEYE_ISO_SMILES>
+[Ga+3]
+
+> <OPENEYE_INCHI>
+InChI=1S/Ga/q+3
+
+> <OPENEYE_INCHIKEY>
+CKHJYUSOUQDYEN-UHFFFAOYSA-N
+
+> <FORMULA>
+Ga+3
+
+$$$$

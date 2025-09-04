@@ -1,0 +1,20 @@
+CL
+  -OEChem-11292419103D
+
+  1  0  0     0  0  0  0  0  0999 V2000
+    0.0000    0.0000    0.0000 Cl  0  5  0  0  0  0  0  0  0  0  0  0
+M  CHG  1   1  -1
+M  END
+> <OPENEYE_ISO_SMILES>
+[Cl-]
+
+> <OPENEYE_INCHI>
+InChI=1S/ClH/h1H/p-1
+
+> <OPENEYE_INCHIKEY>
+VEXZGXHMUGYJMC-UHFFFAOYSA-M
+
+> <FORMULA>
+Cl-
+
+$$$$

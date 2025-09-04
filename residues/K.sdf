@@ -1,0 +1,20 @@
+K
+  -OEChem-10042415163D
+
+  1  0  0     0  0  0  0  0  0999 V2000
+    0.0000    0.0000    0.0000 K   0  3  0  0  0  0  0  0  0  0  0  0
+M  CHG  1   1   1
+M  END
+> <OPENEYE_ISO_SMILES>
+[K+]
+
+> <OPENEYE_INCHI>
+InChI=1S/K/q+1
+
+> <OPENEYE_INCHIKEY>
+NPYPAHLBTDXSSS-UHFFFAOYSA-N
+
+> <FORMULA>
+K+
+
+$$$$
