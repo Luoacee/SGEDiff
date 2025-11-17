@@ -541,31 +541,56 @@ class EnrichmentLayer(nn.Module):  # X -> h
         self.output = MLP(hidden_dim*2, hidden_dim, hidden_dim, norm=norm, act_fn=act_fn)
 
 
-    def forward(self, h, sh, batch, sub_batch):  # ，+（+），，
+class EnrichmentLayer(nn.Module):  # X -> h 坐标生成特征
+    def __init__(self, input_dim, hidden_dim, output_dim, n_heads, edge_feat_dim, r_feat_dim,
+                 act_fn='relu', norm=True, out_fc=True):
+        super().__init__()
+        self.input_dim = input_dim
+        self.hidden_dim = hidden_dim
+        self.output_dim = output_dim
+        self.n_heads = n_heads
+        self.act_fn = act_fn
+        self.edge_feat_dim = edge_feat_dim
+        self.r_feat_dim = r_feat_dim
+        self.out_fc = out_fc
+
+        # attention key func
+        kv_input_dim = input_dim
+        self.hk_func = MLP(kv_input_dim, output_dim, hidden_dim, norm=norm, act_fn=act_fn)
+
+        # attention value func
+        self.hv_func = MLP(kv_input_dim, output_dim, hidden_dim, norm=norm, act_fn=act_fn)
+
+        # attention query func
+        self.hq_func = MLP(input_dim, output_dim, hidden_dim, norm=norm, act_fn=act_fn)
+
+        self.output = MLP(hidden_dim*2, hidden_dim, hidden_dim, norm=norm, act_fn=act_fn)
+
+
+    def forward(self, h, sh, batch, sub_batch): 
         k = self.hk_func(sh).view(-1, self.n_heads,
                     self.output_dim // self.n_heads)
         v = self.hv_func(sh).view(-1, self.n_heads,
                     self.output_dim // self.n_heads)
-        # compute q  ， 
         q = self.hq_func(h).view(-1, self.n_heads,
-                                 self.output_dim // self.n_heads)  # q  [edges, head, //] [59616, 16, 8]
+                                 self.output_dim // self.n_heads) 
         q = q.permute(1, 0, 2)
         v = v.permute(1, 0, 2)
         k = k.permute(1, 2, 0)
 
-        scores = torch.matmul(q, k) / torch.sqrt(torch.tensor(self.output_dim).to(h))
+        scores = torch.matmul(q, k) / torch.sqrt(torch.tensor(self.output_dim // self.n_heads).to(h))
         mask = self.get_mask(batch, sub_batch).to(h)
-        attention_weights = F.softmax(scores*mask, dim=-1)
+        attention_weights = F.softmax(scores + mask, dim=-1)
 
         output = torch.matmul(attention_weights, v).permute(1, 0, 2).contiguous()
         output = output.view(-1, self.output_dim)
-        output = self.output(torch.cat([output, h], -1))  
+        output = self.output(torch.cat([output, h], -1)) 
         return output + h
 
     @staticmethod
     def get_mask(batch1, batch2):
         mask = batch1.unsqueeze(1) == batch2.unsqueeze(0)
-        mask = torch.where(mask, torch.tensor(1.0), torch.tensor(float(-1e9)))
+        mask = torch.where(mask, torch.tensor(0.0), torch.tensor(float(-1e9)))
         return mask
 
 
